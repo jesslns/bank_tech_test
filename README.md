@@ -28,3 +28,4 @@ As a user,
 I would like to see my statement entry
 so that I have a record of my cash flow.
 ```
+### Class Model
