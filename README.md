@@ -1,5 +1,6 @@
-## Bank Tech Test
+# Bank Tech Test
 
+## Introduction
 This is a teach test practice that is part of Makers course material in week 10.
 
 ### User Stories
@@ -33,3 +34,21 @@ so that I have a record of my cash flow.
 |Class|Method|
 |:----|:----|
 |Account|deposit, withdrawal, store_balance, print_statement|
+
+## Instructions
+
+### Project Set-up
+##### Install Ruby Gems
+To install ruby gems for this project run `touch Gemfile` in your terminal, and in your `Gemfile`, write the following lines:
+```
+source "https://rubygems.org"
+
+ruby '2.5.1'
+
+gem "rspec"
+```
+
+Run `bundle --install` in your terminal to install the ruby gems that are specified in the Gemfile.
+
+##### Set-up Test Environment
+To set up the test environment, run `Rspec --init` in your terminal. and a `/spec` file with a `spec_helper.rb` file are generated.
