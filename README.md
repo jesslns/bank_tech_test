@@ -52,3 +52,16 @@ Run `bundle --install` in your terminal to install the ruby gems that are specif
 
 ##### Set-up Test Environment
 To set up the test environment, run `Rspec --init` in your terminal. and a `/spec` file with a `spec_helper.rb` file are generated.
+
+#### Directory Structure
+At your project directory type `mkdir lib` in your terminal to create a `/lib` directory where you store all your models. your project directory should look like the diagram below:
+```
+lib
+├── account.rb
+
+spec
+├── account_spec.rb
+
+Gemfile
+README.md
+```
