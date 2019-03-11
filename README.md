@@ -34,6 +34,7 @@ so that I have a record of my cash flow.
 |Class|Method|
 |:----|:----|
 |Account|deposit, withdrawal, store_balance, print_statement|
+|Statement|date, credit, debit, balance|
 
 ## Instructions
 
@@ -51,16 +52,18 @@ gem "rspec"
 Run `bundle --install` in your terminal to install the ruby gems that are specified in the Gemfile.
 
 ##### Set-up Test Environment
-To set up the test environment, run `Rspec --init` in your terminal. and a `/spec` file with a `spec_helper.rb` file are generated.
+To set up the test environment, run `rspec --init` in your terminal. and a `/spec` file with a `spec_helper.rb` file are generated.
 
 #### Directory Structure
 At your project directory type `mkdir lib` in your terminal to create a `/lib` directory where you store all your models. your project directory should look like the diagram below:
 ```
 lib
 ├── account.rb
+├── statement.rb
 
 spec
 ├── account_spec.rb
+├── statement_spec.rb
 
 Gemfile
 README.md
