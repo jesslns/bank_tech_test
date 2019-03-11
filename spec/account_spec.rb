@@ -25,6 +25,13 @@ describe Account do
       expect(account.statements[-1].debit).to eq(nil)
       expect(account.statements[-1].balance).to eq(1)
     end
+    it "records withdrawal transaction in the statement" do
+      account.deposit(10)
+      account.withdraw(5)
+      expect(account.statements[-1].credit).to eq(nil)
+      expect(account.statements[-1].debit).to eq(5)
+      expect(account.statements[-1].balance).to eq(5)
+    end
   end
 
 end

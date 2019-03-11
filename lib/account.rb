@@ -16,6 +16,9 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
+    credit = nil
+    debit = amount
+    @statements << Statement.new(credit, debit, @balance)
   end
 
 end
