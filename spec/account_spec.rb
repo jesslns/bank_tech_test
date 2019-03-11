@@ -12,4 +12,9 @@ describe Account do
     expect{account.deposit(1)}.to change{account.balance}.by(1)
   end
 
+  it "can withdaw money" do
+    account.deposit(1)
+    expect{account.withdraw(1)}.to change{account.balance}.by(-1)
+  end
+
 end
