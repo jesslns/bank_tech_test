@@ -25,7 +25,11 @@ so that I can check my cash flow.
 ```
 ```
 As a user,
-I would like to see my statement entry
+I would like to see my each of my balance entry
 so that I have a record of my cash flow.
 ```
 ### Class Model
+
+|Class|Method|
+|:----|:----|
+|Account|deposit, withdrawal, store_balance, print_statement|
