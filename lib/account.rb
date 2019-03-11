@@ -21,4 +21,10 @@ class Account
     @statements << Statement.new(credit, debit, @balance)
   end
 
+  def print_statement
+    @statements.reverse.each{
+      |entry| puts "#{entry.date}" + " || #{entry.credit}" + " || #{entry.debit}" + " || #{entry.balance}"
+    }
+  end
+
 end

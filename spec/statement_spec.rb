@@ -11,7 +11,7 @@ describe Statement do
   end
   it "can store date in YYYY/MM/DD format" do
     allow(@statement).to receive(:initialize).and_return(@time)
-    expect(@statement.date).to eq("2019/03/11")
+    expect(@statement.date).to eq("11/03/2019")
   end
 
   context "It store statement details" do

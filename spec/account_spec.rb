@@ -5,7 +5,7 @@ describe Account do
   subject(:account) { described_class.new }
 
   it "starts with zero balance" do
-    expect(account.balance).to eq(0)
+    expect(account.balance).to eq(0.00)
   end
 
   it "updates balance after a deposit is made" do
@@ -32,6 +32,25 @@ describe Account do
       expect(account.statements[-1].debit).to eq(5)
       expect(account.statements[-1].balance).to eq(5)
     end
+  end
+
+  describe "Print statements" do
+    it "prints statement" do
+      # @credit = double (:credit)
+      # @debit = double (:double)
+      # @balance = double (:balance)
+      # @statement = Statement.new(@credit, @debit, @balance)
+      # allow(@statement).to receive(:date).and_return("11/03/2019")
+      # allow(@statement).to receive(:credit).and_return("11/03/2019")
+      # allow(account).to receive(:deposit).and_return([@statement])
+      account.deposit(10)
+      expect do
+        account.print_statement
+      end.to output(
+        "11/03/2019 || 10 ||  || 10\n"
+      ).to_stdout
+    end
+
   end
 
 end
