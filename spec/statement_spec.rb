@@ -12,5 +12,6 @@ describe Statement do
 
   context "can store entry details" do
     it {is_expected.to respond_to :credit}
+    it {is_expected.to respond_to :debit}
   end
 end
