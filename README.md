@@ -21,10 +21,10 @@ so that I can know about my financial status.
 ```
 As a user,
 I would like to have date, amount, balance printed on my statement
+so that I can check my cash flow.
+```
+```
+As a user,
+I would like to see my statement entry
 so that I have a record of my cash flow.
-```
-```
-As a bank manager,
-I would like to keep clients' account statement data
-so that I can always show clients their account statements on request.
 ```
