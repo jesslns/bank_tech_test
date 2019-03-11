@@ -1,18 +1,21 @@
 class Account
 
-  attr_reader :balance, :statement
+  attr_reader :balance, :statements
 
   def initialize
     @balance = 0
-    @statement = []
+    @statements = []
   end
 
   def deposit(amount)
     @balance += amount
-    @statement << {:time => Time.now.strftime("%Y/%m/%d"), :debit => amount, :balance => @balance}
+    credit = amount
+    debit = nil
+    @statements << Statement.new(credit, debit, @balance)
   end
 
   def withdraw(amount)
     @balance -= amount
   end
+
 end
