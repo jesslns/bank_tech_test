@@ -20,7 +20,7 @@ describe Account do
     expect{account.withdraw(1)}.to change{account.balance}.by(-1)
   end
 
-  it "records transaction in the statement" do
+  it "records deposit transaction in the statement" do
     account.deposit(1)
     allow(account).to receive(:statement).and_return([@statement])
     expect(account.statement[-1]).to eq(@statement)
