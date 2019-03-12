@@ -1,7 +1,31 @@
 # Bank Tech Test
 
 ## Introduction
-This is a teach test practice that is part of Makers course material in week 10.
+This is a teach test practice that is part of Makers course material in week 10. Original instructions can be found [here](https://github.com/makersacademy/course/blob/master/individual_challenges/bank_tech_test.md)
+
+The task is to build a bank-like app, in which a user can manage his/her account.
+
+### Requirements
+- able to interact with the code via a REPL like IRB.
+- Have deposits and withdrawal functions.
+- Can print account statement that includes date, amount, balance.
+- Data can be kept in memory (it doesn't need to be stored to a database or anything).
+
+### Acceptance criteria
+Given a client makes a deposit of 1000 on 10-01-2012
+And a deposit of 2000 on 13-01-2012
+And a withdrawal of 500 on 14-01-2012
+When she prints her bank statement
+Then she would see
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
+
+I have translated the above requirements into user stories as following.
+
 
 ### User Stories
 ```
