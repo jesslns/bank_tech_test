@@ -22,16 +22,16 @@ describe Account do
   describe 'Statement functions' do
     it 'records deposit transaction in the statement' do
       account.deposit(1)
-      expect(account.statements[-1].credit).to eq(1)
-      expect(account.statements[-1].debit).to eq(nil)
-      expect(account.statements[-1].balance).to eq(1)
+      expect(account.statements[-1].credit).to eq('1.00')
+      expect(account.statements[-1].debit).to eq('')
+      expect(account.statements[-1].balance).to eq('1.00')
     end
     it 'records withdrawal transaction in the statement' do
       account.deposit(10)
       account.withdraw(5)
-      expect(account.statements[-1].credit).to eq(nil)
-      expect(account.statements[-1].debit).to eq(5)
-      expect(account.statements[-1].balance).to eq(5)
+      expect(account.statements[-1].credit).to eq('')
+      expect(account.statements[-1].debit).to eq('5.00')
+      expect(account.statements[-1].balance).to eq('5.00')
     end
   end
 
@@ -39,15 +39,15 @@ describe Account do
     it 'prints statement' do
       @entry = double :entry
       allow(@entry).to receive(:date).and_return('11/03/2019')
-      allow(@entry).to receive(:credit).and_return(10)
-      allow(@entry).to receive(:debit).and_return(nil)
-      allow(@entry).to receive(:balance).and_return(10)
+      allow(@entry).to receive(:credit).and_return('10.00')
+      allow(@entry).to receive(:debit).and_return('')
+      allow(@entry).to receive(:balance).and_return('10.00')
       account.instance_variable_set(:@statements, [@entry])
       expect do
         account.print_statement
       end.to output(
         "Date || " + "credit || " + "debit || " + "balance\n" +
-        "11/03/2019 || 10 ||  || 10\n"
+        "11/03/2019 || 10.00 ||  || 10.00\n"
       ).to_stdout
     end
   end
