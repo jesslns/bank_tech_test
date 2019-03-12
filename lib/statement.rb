@@ -1,12 +1,14 @@
-class Statement
+# frozen_string_literal: true
 
+class Statement
   attr_reader :date, :credit, :debit, :balance
 
-  def initialize (time = Time.now, credit, debit, balance)
-    @date = time.strftime("%d/%m/%Y")
+  DEFAULT_DATE = Time.now.strftime('%d/%m/%Y')
+
+  def initialize(date = DEFAULT_DATE, credit, debit, balance)
+    @date = date
     @credit = credit
     @debit = debit
     @balance = balance
   end
-
 end

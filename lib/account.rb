@@ -1,5 +1,7 @@
-class Account
+# frozen_string_literal: true
 
+require_relative './statement.rb'
+class Account
   attr_reader :balance, :statements
 
   def initialize
@@ -11,20 +13,23 @@ class Account
     @balance += amount
     credit = amount
     debit = nil
-    @statements << Statement.new(credit, debit, @balance)
+    update_statement(credit, debit)
   end
 
   def withdraw(amount)
     @balance -= amount
     credit = nil
     debit = amount
+    update_statement(credit, debit)
+  end
+
+  def update_statement(credit, debit)
     @statements << Statement.new(credit, debit, @balance)
   end
 
   def print_statement
-    @statements.reverse.each{
-      |entry| puts "#{entry.date}" + " || #{entry.credit}" + " || #{entry.debit}" + " || #{entry.balance}"
-    }
+    @statements.reverse.each do |entry|
+      puts entry.date.to_s + " || #{entry.credit}" + " || #{entry.debit}" + " || #{entry.balance}"
+    end
   end
-
 end
