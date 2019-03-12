@@ -5,8 +5,8 @@ require 'account'
 describe Account do
   subject(:account) { described_class.new }
 
-  it 'tarts with zero balance' do
-    expect(account.balance).to eq(0.00)
+  it 'starts with zero balance' do
+    expect(account.balance).to eq(0)
   end
 
   it 'updates balance after a deposit is made' do
@@ -37,21 +37,17 @@ describe Account do
 
   describe 'Print statements' do
     it 'prints statement' do
-      # @entry = double :entry
-      # allow(@entry).to receive(:date).and_return('12/03/2019')
-      # allow(@entry).to receive(:credit).and_return(10)
-      # allow(@entry).to receive(:debit).and_return(nil)
-      # allow(@entry).to receive(:balance).and_return(10)
-      # allow(account).to receive(:statements).and_return([@entry])
-      # allow{account.statements}.to_return([@entry])
-      # p (account.statements)
-
-      account.deposit(10)
+      @entry = double :entry
+      allow(@entry).to receive(:date).and_return('11/03/2019')
+      allow(@entry).to receive(:credit).and_return(10)
+      allow(@entry).to receive(:debit).and_return(nil)
+      allow(@entry).to receive(:balance).and_return(10)
+      account.instance_variable_set(:@statements, [@entry])
       expect do
         account.print_statement
       end.to output(
         "Date || " + "credit || " + "debit || " + "balance\n" +
-        "12/03/2019 || 10 ||  || 10\n"
+        "11/03/2019 || 10 ||  || 10\n"
       ).to_stdout
     end
   end
