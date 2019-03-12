@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative './statement.rb'
+require_relative './printer.rb'
+
 class Account
   attr_reader :balance, :transactions
 
@@ -20,10 +22,8 @@ class Account
   end
 
   def print_statement
-    statement_header
-    @transactions.reverse.each do |entry|
-      puts entry.date + ' || ' + entry.credit + ' || ' + entry.debit + ' || ' + entry.balance
-    end
+    print = Printer.new(@transactions)
+    print.statement
   end
 
   private
@@ -38,9 +38,5 @@ class Account
     end
     balance = format('%.2f', @balance)
     @transactions << Statement.new(credit, debit, balance)
-  end
-
-  def statement_header
-    puts 'date || credit || debit || balance'
   end
 end
