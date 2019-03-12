@@ -3,12 +3,10 @@
 require 'statement'
 
 describe Statement do
-  # subject(:statement) { described_class.new }
   before do
     @credit = double :credit
     @debit = double :debit
     @balance = double :balance
-    # allow(@time).to receive(:initialize).and_return(@time)
     @statement = Statement.new('11/03/2019', @credit, @debit, @balance)
   end
   it 'can store date in YYYY/MM/DD format' do
