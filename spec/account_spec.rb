@@ -46,7 +46,7 @@ describe Account do
       expect do
         account.print_statement
       end.to output(
-        "Date || " + "credit || " + "debit || " + "balance\n" +
+        "date || " + "credit || " + "debit || " + "balance\n" +
         "11/03/2019 || 10.00 ||  || 10.00\n"
       ).to_stdout
     end

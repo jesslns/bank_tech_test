@@ -39,6 +39,6 @@ class Account
 private
 
   def statement_header
-    puts "Date || " + "credit || " + "debit || " + "balance"
+    puts "date || " + "credit || " + "debit || " + "balance"
   end
 end

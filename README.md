@@ -88,15 +88,19 @@ Finished in 0.01304 seconds (files took 0.15346 seconds to load)
 You can run `rubocop` to check for styling offences and run `rubocop --auto-correct` to auto correct them. Click [here](https://rubocop.readthedocs.io/en/latest/basic_usage/) for more information on command flags.
 
 #### Using your Account
-
-You can open a new account, and save money/ withdraw money as below,
+To run the code in an irb type `irb -r "./lib/account.rb".`
+The code below demonstrates how you can open a new account, save money/ withdraw money, and print your statement.
 ```
 2.5.1 :001 > my_account = Account.new
- => #<Account:0x00007fc3399fa9f8 @balance=0, @statements=[]>
+ => #<Account:0x00007ffe19146670 @balance=0, @statements=[]>
 2.5.1 :002 > my_account.deposit(1000)
- => [#<Statement:0x00007fc3399eece8 @date="12/03/2019", @credit=1000, @debit=nil, @balance=1000>]
+ => [#<Statement:0x00007ffe19132828 @date="12/03/2019", @credit="1000.00", @debit="", @balance="1000.00">]
 2.5.1 :003 > my_account.withdraw(500)
- => [#<Statement:0x00007fc3399eece8 @date="12/03/2019", @credit=1000, @debit=nil, @balance=1000>, #<Statement:0x00007fc3399eaf08 @date="12/03/2019", @credit=nil, @debit=500, @balance=500>]
+ => [#<Statement:0x00007ffe19132828 @date="12/03/2019", @credit="1000.00", @debit="", @balance="1000.00">, #<Statement:0x00007ffe1913e998 @date="12/03/2019", @credit="", @debit="500.00", @balance="500.00">]
+2.5.1 :004 > my_account.print_statement
+date || credit || debit || balance
+12/03/2019 ||  || 500.00 || 500.00
+12/03/2019 || 1000.00 ||  || 1000.00
 ```
 
 #### Built with
