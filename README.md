@@ -101,7 +101,7 @@ You can open a new account, and save money/ withdraw money as below,
 
 #### Built with
 
-Ruby version 2.5.1 - language
-Rspec - testing
-Rubocop - styling and style checking
-Git - version control
+Ruby version 2.5.1 - language <br>
+Rspec - testing <br>
+Rubocop - styling and style checking <br>
+Git - version control <br>
