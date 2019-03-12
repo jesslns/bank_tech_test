@@ -57,6 +57,25 @@ Run `bundle --install` in your terminal to install the ruby gems that are specif
 #### Set-up Test Environment
 To set up the test environment, run `rspec --init` in your terminal. and a `/spec` file with a `spec_helper.rb` file are generated.
 
+In your `spec-helper.rb` include the following lines
+```
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+])
+
+SimpleCov.start
+
+RSpec.configure do |config|
+  config.after(:suite) do
+    puts
+    puts "\e[33mRun also rubocop to improve your styling!\e[0m"
+  end
+end
+```
+
 #### Directory Structure
 At your project directory type `mkdir lib` in your terminal to create a `/lib` directory where you store all your models. your project directory should look like the diagram below:
 ```
@@ -76,12 +95,19 @@ README.md
 
 #### Running the Test
 Run the test by typing `rspec`in the terminal, the following is an example when all the tests passed.
-```
-jessicaleung (master *) bank_tech_test $ rspec
-..........
 
-Finished in 0.01304 seconds (files took 0.15346 seconds to load)
+
+```
+jessicaleung (master) bank_tech_test $ rspec
+..........
+Run also rubocop to improve your styling!
+
+
+Finished in 0.02478 seconds (files took 0.29948 seconds to load)
 10 examples, 0 failures
+
+
+COVERAGE: 100.00% -- 84/84 lines in 4 files
 ```
 #### Styling with rubocop
 
