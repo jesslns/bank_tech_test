@@ -1,4 +1,6 @@
-require_relative "./account.rb"
+# frozen_string_literal: true
+
+require_relative './account.rb'
 
 class Printer
 

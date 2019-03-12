@@ -29,12 +29,30 @@ As a user,
 I would like to see my each of my balance entry in chronological order
 so that I can see my most recent transactions at the top of my account statement.
 ```
-### Class Model
+## Approach
 
-|Class|Method|
+#### Technology
+Ruby version 2.5.1 - language <br>
+Rspec - testing <br>
+Rubocop - styling and style checking <br>
+Git - version control <br>
+
+#### Process
+First in the planning stage, I drew class model so that I have a rough idea of classes and their associate functionalities I should build.
+
+Then I set-up the development environment including the installation of the required Gems.
+
+Next, I wrote the tests according to the specifications. I started with the simplest and the most fundamental functionalities need to be implemented, i.e. the `Account class` and `deposit` function. Then I slowly added complexity to the app, by including `withdrawal`, `print statement` and so on.
+
+During the development process I followed the red-green-refactored cycle. I tried to pass test in the simplest way, then refactored and delegated tasks to classes when I see the need.
+
+#### Class Model
+
+|Class|Functionality|
 |:----|:----|
-|Account|deposit, withdrawal, store_balance, print_statement|
-|Statement|date, credit, debit, balance|
+|Account|take deposit, allow withdrawal, record balance, store transactions|
+|Statement| record transactions (include date, credit, debit, and balance)|
+|Printer|print statement|
 
 ## Instructions
 
@@ -128,10 +146,3 @@ date || credit || debit || balance
 12/03/2019 ||  || 500.00 || 500.00
 12/03/2019 || 1000.00 ||  || 1000.00
 ```
-
-#### Built with
-
-Ruby version 2.5.1 - language <br>
-Rspec - testing <br>
-Rubocop - styling and style checking <br>
-Git - version control <br>
