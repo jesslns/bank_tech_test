@@ -2,43 +2,45 @@
 
 require_relative './statement.rb'
 class Account
-  attr_reader :balance, :statements
+  attr_reader :balance, :transactions
 
   def initialize
     @balance = 0
-    @statements = []
+    @transactions = []
   end
 
   def deposit(amount)
     @balance += amount
-    credit = '%.2f' % amount
-    debit = ''
-    balance = '%.2f' % @balance
-    update_statement(credit, debit, balance)
+    record_transaction('deposit', amount)
   end
 
   def withdraw(amount)
     @balance -= amount
-    credit = ''
-    debit = '%.2f' % amount
-    balance = '%.2f' % @balance
-    update_statement(credit, debit, balance)
-  end
-
-  def update_statement(credit, debit, balance)
-    @statements << Statement.new(credit, debit, balance)
+    record_transaction('withdraw', amount)
   end
 
   def print_statement
     statement_header
-    @statements.reverse.each do |entry|
-      puts entry.date + ' || ' + entry.credit + ' || ' + entry.debit + ' || ' + entry.balance.to_s
+    @transactions.reverse.each do |entry|
+      puts entry.date + ' || ' + entry.credit + ' || ' + entry.debit + ' || ' + entry.balance
     end
   end
 
-private
+  private
+
+  def record_transaction(type, amount)
+    if type == 'deposit'
+      credit = format('%.2f', amount)
+      debit = ''
+    elsif type == 'withdraw'
+      credit = ''
+      debit = format('%.2f', amount)
+    end
+    balance = format('%.2f', @balance)
+    @transactions << Statement.new(credit, debit, balance)
+  end
 
   def statement_header
-    puts "date || " + "credit || " + "debit || " + "balance"
+    puts 'date || credit || debit || balance'
   end
 end
