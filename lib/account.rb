@@ -28,8 +28,14 @@ class Account
   end
 
   def print_statement
+    statement_header
     @statements.reverse.each do |entry|
-      puts entry.date.to_s + " || #{entry.credit}" + " || #{entry.debit}" + " || #{entry.balance}"
+      puts entry.date.to_s + ' || ' + entry.credit.to_s + ' || ' + entry.debit.to_s + ' || ' + entry.balance.to_s
     end
+  end
+
+private
+  def statement_header
+    puts "Date || " + "credit || " + "debit || " + "balance"
   end
 end

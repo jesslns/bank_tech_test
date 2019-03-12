@@ -47,10 +47,10 @@ describe Account do
       # p (account.statements)
 
       account.deposit(10)
-      p(account.print_statement)
       expect do
         account.print_statement
       end.to output(
+        "Date || " + "credit || " + "debit || " + "balance\n" +
         "12/03/2019 || 10 ||  || 10\n"
       ).to_stdout
     end
