@@ -73,6 +73,16 @@ README.md
 ```
 
 ### Usage
+
+#### Running the Test
+Run the test by typing `rspec`in the terminal, the following is an example when all the tests passed.
+```
+jessicaleung (master *) bank_tech_test $ rspec
+..........
+
+Finished in 0.01304 seconds (files took 0.15346 seconds to load)
+10 examples, 0 failures
+```
 #### Styling with rubocop
 
 You can run `rubocop` to check for styling offences and run `rubocop --auto-correct` to auto correct them. Click [here](https://rubocop.readthedocs.io/en/latest/basic_usage/) for more information on command flags.
@@ -88,3 +98,10 @@ You can open a new account, and save money/ withdraw money as below,
 2.5.1 :003 > my_account.withdraw(500)
  => [#<Statement:0x00007fc3399eece8 @date="12/03/2019", @credit=1000, @debit=nil, @balance=1000>, #<Statement:0x00007fc3399eaf08 @date="12/03/2019", @credit=nil, @debit=500, @balance=500>]
 ```
+
+#### Built with
+
+Ruby version 2.5.1 - language
+Rspec - testing
+Rubocop - styling and style checking
+Git - version control
