@@ -81,57 +81,14 @@ During the development process I followed the red-green-refactored cycle. I trie
 ## Instructions
 
 ### Project Set-up
+
+#### Clone this repo
+
+Type `git clone https://github.com/jesslns/bank_tech_test.git` to clone this repo to your local machine.
+
 #### Install Ruby Gems
-To install ruby gems for this project run `touch Gemfile` in your terminal, and in your `Gemfile`, write the following lines:
-```
-source 'https://rubygems.org'
 
-ruby '2.5.1'
-
-gem 'rspec'
-gem 'rubocop', '0.56.0'
-gem 'simplecov', require: false, group: :test
-gem 'simplecov-console', require: false, group: :test
-```
-
-Run `bundle --install` in your terminal to install the ruby gems that are specified in the Gemfile.
-
-#### Set-up Test Environment
-To set up the test environment, run `rspec --init` in your terminal. and a `/spec` file with a `spec_helper.rb` file are generated.
-
-In your `spec-helper.rb` include the following lines
-```
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-])
-
-SimpleCov.start
-
-RSpec.configure do |config|
-  config.after(:suite) do
-    puts
-    puts "\e[33mRun also rubocop to improve your styling!\e[0m"
-  end
-end
-```
-
-#### Directory Structure
-At your project directory type `mkdir lib` in your terminal to create a `/lib` directory where you store all your models. your project directory should look like the diagram below:
-```
-lib
-├── account.rb
-├── statement.rb
-
-spec
-├── account_spec.rb
-├── statement_spec.rb
-
-Gemfile
-README.md
-```
+You can see in Gemfile that the gems required for this project. To install the ruby gems, run `bundle --install` in your terminal.
 
 ### Usage
 
